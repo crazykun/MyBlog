@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-06-27 22:15:50
+Date: 2017-06-27 23:49:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `think_admin_user` (
 -- ----------------------------
 -- Records of think_admin_user
 -- ----------------------------
-INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2016-12-29 11:04:52', '127.0.0.1');
+INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2017-06-27 22:41:34', '0.0.0.0');
 INSERT INTO `think_admin_user` VALUES ('2', 'test', 'b9b433cfeb75458aea0cd77cef76f5bf', '1', '2017-03-28 09:33:52', null, '2017-04-01 15:22:20', '127.0.0.1');
 
 -- ----------------------------
@@ -389,18 +389,19 @@ CREATE TABLE `think_system` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `status` int(5) DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
 
 -- ----------------------------
 -- Records of think_system
 -- ----------------------------
-INSERT INTO `think_system` VALUES ('1', 'site_title', '网站标题', 'MyThink 后台管理系统', '1', null, '0');
-INSERT INTO `think_system` VALUES ('2', 'seo_title', 'SEO标题', 'MyThink ', '1', null, '0');
+INSERT INTO `think_system` VALUES ('1', 'site_title', '网站标题', 'MyBlog 后台管理系统', '1', null, '0');
+INSERT INTO `think_system` VALUES ('2', 'seo_title', 'SEO标题', 'MyBlog', '1', null, '0');
 INSERT INTO `think_system` VALUES ('3', 'seo_keywords', 'SEO关键字', '', '1', null, '0');
 INSERT INTO `think_system` VALUES ('4', 'seo_description', 'SEO说明', '后台管理系统', '1', null, '0');
-INSERT INTO `think_system` VALUES ('5', 'copyright', '版权信息', '', '1', null, '0');
+INSERT INTO `think_system` VALUES ('5', 'site_copyright', '版权信息', '', '1', null, '0');
 INSERT INTO `think_system` VALUES ('6', 'site_icp', 'ICP备案号', '', '1', null, '0');
-INSERT INTO `think_system` VALUES ('7', 'tongji', '统计代码', '', '1', null, '0');
+INSERT INTO `think_system` VALUES ('7', 'site_tongji', '统计代码', '', '1', null, '0');
+INSERT INTO `think_system` VALUES ('8', 'site_url', '网址网址', 'http://jifuns.com', '1', null, '0');
 
 -- ----------------------------
 -- Table structure for think_user
@@ -435,7 +436,7 @@ CREATE TABLE `think_visitor` (
   `time` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
 
 -- ----------------------------
 -- Records of think_visitor
@@ -454,3 +455,4 @@ INSERT INTO `think_visitor` VALUES ('11', '1487692800', '387');
 INSERT INTO `think_visitor` VALUES ('12', '1490889600', '2');
 INSERT INTO `think_visitor` VALUES ('13', '1490976000', '12');
 INSERT INTO `think_visitor` VALUES ('14', '1491148800', '17');
+INSERT INTO `think_visitor` VALUES ('15', '1498492800', '34');
