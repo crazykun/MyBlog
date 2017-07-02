@@ -1,15 +1,11 @@
-/*首页4新闻切换*/
-function nTabs(thisObj, Num) {
-    if (thisObj.className == " ") return;
-    var tabObj = thisObj.parentNode.id;
-    var tabList = document.getElementById(tabObj).getElementsByTagName("li");
-    for (i = 0; i < tabList.length; i++) {
-        if (i == Num) {
-            thisObj.className = " ";
-            document.getElementById(tabObj + "_Content" + i).style.display = "block";
-        } else {
-            tabList[i].className = "normal";
-            document.getElementById(tabObj + "_Content" + i).style.display = "none";
-        }
-    }
+var typ = ["marginTop", "marginLeft"],
+    rangeN = 10,
+    timeout = 0;
+
+function shake(o, end) {
+    var range = Math.floor(Math.random() * rangeN);
+    var typN = Math.floor(Math.random() * typ.length);
+    o["style"][typ[typN]] = "" + range + "px";
+    var shakeTimer = setTimeout(function() { shake(o, end) }, timeout);
+    o[end] = function() { clearTimeout(shakeTimer) };
 }

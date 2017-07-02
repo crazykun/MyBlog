@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-06-27 23:49:44
+Date: 2017-07-02 23:59:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `think_admin_user` (
 -- ----------------------------
 -- Records of think_admin_user
 -- ----------------------------
-INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2017-06-27 22:41:34', '0.0.0.0');
+INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2017-07-02 23:51:22', '0.0.0.0');
 INSERT INTO `think_admin_user` VALUES ('2', 'test', 'b9b433cfeb75458aea0cd77cef76f5bf', '1', '2017-03-28 09:33:52', null, '2017-04-01 15:22:20', '127.0.0.1');
 
 -- ----------------------------
@@ -253,12 +253,17 @@ CREATE TABLE `think_nav` (
   `target` varchar(10) DEFAULT '' COMMENT '打开方式',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态  0 隐藏  1 显示',
   `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='导航表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='导航表';
 
 -- ----------------------------
 -- Records of think_nav
 -- ----------------------------
+INSERT INTO `think_nav` VALUES ('1', '0', '技术分享', '', '', '', '_self', '1', '0', '2017-07-02 23:56:10', '2017-07-02 23:56:10');
+INSERT INTO `think_nav` VALUES ('2', '0', '闲言碎语', '', '', '', '_self', '1', '0', '2017-07-02 23:58:15', '2017-07-02 23:58:15');
+INSERT INTO `think_nav` VALUES ('3', '0', '关于ME', '', '', '', '_self', '1', '0', '2017-07-02 23:58:35', '2017-07-02 23:58:35');
 
 -- ----------------------------
 -- Table structure for think_slide
@@ -394,7 +399,7 @@ CREATE TABLE `think_system` (
 -- ----------------------------
 -- Records of think_system
 -- ----------------------------
-INSERT INTO `think_system` VALUES ('1', 'site_title', '网站标题', 'MyBlog 后台管理系统', '1', null, '0');
+INSERT INTO `think_system` VALUES ('1', 'site_title', '网站标题', '吉趣 | 吉语自天成，妙手偶得之', '1', null, '0');
 INSERT INTO `think_system` VALUES ('2', 'seo_title', 'SEO标题', 'MyBlog', '1', null, '0');
 INSERT INTO `think_system` VALUES ('3', 'seo_keywords', 'SEO关键字', '', '1', null, '0');
 INSERT INTO `think_system` VALUES ('4', 'seo_description', 'SEO说明', '后台管理系统', '1', null, '0');
@@ -436,7 +441,7 @@ CREATE TABLE `think_visitor` (
   `time` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
 
 -- ----------------------------
 -- Records of think_visitor
@@ -456,3 +461,5 @@ INSERT INTO `think_visitor` VALUES ('12', '1490889600', '2');
 INSERT INTO `think_visitor` VALUES ('13', '1490976000', '12');
 INSERT INTO `think_visitor` VALUES ('14', '1491148800', '17');
 INSERT INTO `think_visitor` VALUES ('15', '1498492800', '34');
+INSERT INTO `think_visitor` VALUES ('16', '1498665600', '3');
+INSERT INTO `think_visitor` VALUES ('17', '1498924800', '34');

@@ -9,26 +9,31 @@
     <meta name="description" content="{block name='description'}{$C['seo_description']}{/block}" />
     <title>{block name="title"}{$C['site_title']}{/block}</title>
 
-    <link href="/public/home/css/bootstrap.css" rel="stylesheet">
+    <link href="/home/css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="/public/home/css/common.css" rel="stylesheet">
-    <link href="/public/home/css/mm.css" rel="stylesheet">
+    <link href="/home/css/common.css" rel="stylesheet">
+    <link href="/home/css/mm.css" rel="stylesheet">
 
     <!--CSS引用-->
     {block name="css"}{/block}
-    <script src="/public/home/js/jquery.min.js"></script>
-    <script src="/public/home/js/bootstrap.min.js"></script>
+    <script src="/home/js/jquery.min.js"></script>
+    <script src="/home/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
     {block name="header"}
-    <div class="header container">
-        <div class="row">
-
+    <div class="headerTop container-fluid">
+        <div class="container">
+            <h1 id="logo">
+                <a href="/" title="吉趣网"><img src="/home/images/LOGO.gif" alt="吉趣网" onmouseover="shake(this,'onmouseout')" style="margin-top: 2px; margin-left: 0px;"></a>
+            </h1>
+            <div id="logoTitle">
+                <h3>吉语自天成，妙手偶得之</h3>
+            </div>
         </div>
     </div>
     <nav class="navbar navbar-default" id="nav">
@@ -40,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">文源网</a>
+                <a class="navbar-brand" href="#">吉趣</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav mynav">
@@ -86,7 +91,7 @@
             nav: "{$current_nav|default=''}",
         };
     </script>
-    <script src="/public/home/js/common.js"></script>
+    <script src="/home/js/common.js"></script>
     {block name="js"}{/block}
     <!--页面JS脚本-->
 </body>
