@@ -228,11 +228,7 @@ a:hover {
 /* 小屏幕（平板，大于等于 768px） */
 
 @media only screen and (max-width: 767px) {
-    .header-extra,
-    .header-middle,
-    .main_left {
-        display: none;
-    }
+    .headerTop {}
 }
 
 @media only screen and (min-width: 767px) {
@@ -272,4 +268,32 @@ a:hover {
 
 .headerTop #logoTitle h3 {
     margin: 0 auto;
+}
+
+footer {
+    margin: 0;
+    padding: 50px;
+    background: #eee;
+}
+
+#back-to-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(244, 100, 95, 0.6);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 2px;
+    z-index: 1;
+    display: none;
+}
+
+#back-to-top:hover {
+    background: #f4645f;
+}
+
+#back-to-top span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
 }
