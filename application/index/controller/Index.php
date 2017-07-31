@@ -2,6 +2,8 @@
 namespace app\index\controller;
 
 use app\common\controller\HomeBase;
+use app\common\model\Category as CategoryModel;
+use app\common\model\Article as ArticleModel;
 use think\Db;
 
 class Index extends HomeBase
@@ -26,10 +28,13 @@ class Index extends HomeBase
             $cid=$category['pid'];
         }	
         //热门点击
-        $map11['status']  = 1;
-        $map11['is_recommend']  = 1;
-        $map11['label']  = ['like','%2%'];
-        $listReading=Db::name('article')->where($map11)->order('sort DESC')->limit(6) ->select();  
+        $map1['status']  = 1;
+        $map1['is_recommend']  = 1;
+        $map1['label']  = ['like','%2%'];
+        $listReading=Db::name('article')->where($map1)->order('sort DESC')->limit(6) ->select();  
 		return $this->fetch('index',['lists' => $lists,'current_nav'=>'/lists/'.$cid,'category'=>$category,'category_list'=>$category_list,'child_cid'=>$child_cid,'reading'=>$listReading,]);
+    }
+    public function search($cid=1, $page = 1){
+
     }
 }

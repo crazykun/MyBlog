@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-07-02 23:59:08
+Date: 2017-07-31 23:27:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `think_admin_user` (
 -- ----------------------------
 -- Records of think_admin_user
 -- ----------------------------
-INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2017-07-02 23:51:22', '0.0.0.0');
+INSERT INTO `think_admin_user` VALUES ('1', 'admin', '0dfc7612f607db6c17fd99388e9e5f9c', '1', '2017-03-28 09:33:49', null, '2017-07-24 22:37:49', '0.0.0.0');
 INSERT INTO `think_admin_user` VALUES ('2', 'test', 'b9b433cfeb75458aea0cd77cef76f5bf', '1', '2017-03-28 09:33:52', null, '2017-04-01 15:22:20', '127.0.0.1');
 
 -- ----------------------------
@@ -53,18 +53,22 @@ CREATE TABLE `think_article` (
   `reading` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '阅读量',
   `thumb` varchar(255) DEFAULT '' COMMENT '缩略图',
   `photo` text COMMENT '图集',
+  `is_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，0不推荐，1推荐',
   `is_top` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否置顶  0 不置顶  1 置顶',
+  `label` varchar(255) DEFAULT NULL COMMENT '标签',
   `sort` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `publish_time` datetime NOT NULL COMMENT '发布时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 -- ----------------------------
 -- Records of think_article
 -- ----------------------------
-INSERT INTO `think_article` VALUES ('1', '1', '测试', '测试', '测试', '一阵风', '1', '0', '/uploads/20170330/0e262bc5b3c3a46e72fcc3d01200b0a4.jpg', null, '1', '1', '2017-03-30 18:32:28', '2017-03-30 18:32:04', null);
+INSERT INTO `think_article` VALUES ('1', '1', 'Permanent Link to Uncaught TypeError: Cannot read property ‘msie’ of undefined', 'Permanent Link to Uncaught TypeError: Cannot read property ‘msie’ of undefined', '<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">网上用了个jquery插件，运行时“var cssfixedsupport=$.browser.msie &amp;&amp; parseFloat($.browser.version) &lt; 7;//判断是否ie6”报了Uncaught TypeError: Cannot read property \'msie\' of undefined的错误。 网上搜了一下，http://stackoverflow.com/questions/14923301/uncaught-typeerror-cannot-read-property-msie-of-undefined-jquery-tools里面说在jquerry1.9以后，browser属性已经被移除。 上jquerry官网查了一下API，确实已经移除。官网建议使用Modernizr库。 不希望再引入其它库，再上网找其它的解决方案，关键字：jquery1.9浏览器类型。 下面这个是可行的（出处：http://blog.csdn.net/lyc_2011_acm/article/details/8749177） 判断浏览器类型： $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase()); $.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase()); $.browser.opera = /opera/.test(navigator.userAgent.toLowerCase()); $.browser.msie = /msie/.test(navigator.userAgent.toLowerCase()); 号后面的表达式返回的就是 true/false， 可以直接用来替换原来的 $.browser.msie 等。 检查是否为 IE6： // Old if ($.browser.msie &amp;&amp; 7 &gt; $.browser.version) {}</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">// New</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">if (‘undefined’ == typeof(document.body.style.maxHeight)) {}</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">检查是否为 IE 6-8：</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">if (!$.support.leadingWhitespace) {}</span>', '一阵风', '1', '0', '', null, '0', '1', null, '1', '2017-03-30 18:32:28', '2017-03-30 18:32:04', '2017-07-24 22:51:14');
+INSERT INTO `think_article` VALUES ('2', '1', 'dede 时间调用标签格式大全', '', '<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=”MyDate(‘Y-m-d’,@me)”/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">2013-12-17</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=MyDate(‘m-d’,@me)/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">12-17</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=MyDate(‘y-m-d’,@me)/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">13-12-17</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=’strftime(“%y-%m-%d %H:%M:%S”,@me)’/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">13-12-17 10:35:21</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=’strftime(“%m-%d %H:%M:%S”,@me)’/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">12-17 10:35:21</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=’strftime(“%y年%m月%d日”,@me)’/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">13年12月17日</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">[field:pubdate function=’strftime(“%Y年%m月%d日 %H点%M分%S秒”,@me)’/]</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">2013年12月17日 10点35分21秒</span>', 'admin', '1', '0', '', null, '0', '0', null, '0', '2017-07-24 22:51:58', '2017-07-24 22:51:19', '2017-07-24 22:51:58');
+INSERT INTO `think_article` VALUES ('3', '1', '在linux下配置LAMP', '在linux下配置LAMP', '<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">首先安装</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install apache2</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install php5</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">cat /etc/apache2/mods-enable/php5.load</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install mysql-server</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">cat /etc/php5/conf.d/mysql.ini</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install php5-mysql</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo service mysql restart</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo service apache2 restart</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">或者直接安装集成的包</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo tasksel install lamp-server</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">测试php安装</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">cd /var/www</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo vim info.php</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">安装php扩展</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install php5-gd curl libcurl3 libcurl3-dev php5-curl</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo service apache2 restart</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">安装 phpmyadmin</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo apt-get install phpmyadmin</span><br style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\" />\r\n<span style=\"color:#6F6F6F;font-family:&quot;font-size:14px;white-space:normal;background-color:#F1F2F6;\">sudo ln -s /usr/share/phpmyadmin/ /var/www/pma</span>', 'admin', '1', '0', '', null, '0', '0', null, '0', '2017-07-24 22:52:19', '2017-07-24 22:51:59', '2017-07-24 22:52:19');
 
 -- ----------------------------
 -- Table structure for think_auth_group
@@ -213,13 +217,14 @@ CREATE TABLE `think_category` (
   `pid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '上级分类ID',
   `path` varchar(255) DEFAULT '' COMMENT '路径',
   `create_time` datetime NOT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='分类表';
 
 -- ----------------------------
 -- Records of think_category
 -- ----------------------------
-INSERT INTO `think_category` VALUES ('1', '分类一', '', '', '', '', '', '', '1', '0', '0', '0,', '2016-12-22 18:22:24');
+INSERT INTO `think_category` VALUES ('1', '技术分享', '', '', '', '', '', '', '1', '0', '0', '0,', '2016-12-22 18:22:24', '2017-07-24 22:44:30');
 
 -- ----------------------------
 -- Table structure for think_link
@@ -441,7 +446,7 @@ CREATE TABLE `think_visitor` (
   `time` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='网站访问量表';
 
 -- ----------------------------
 -- Records of think_visitor
@@ -463,3 +468,6 @@ INSERT INTO `think_visitor` VALUES ('14', '1491148800', '17');
 INSERT INTO `think_visitor` VALUES ('15', '1498492800', '34');
 INSERT INTO `think_visitor` VALUES ('16', '1498665600', '3');
 INSERT INTO `think_visitor` VALUES ('17', '1498924800', '34');
+INSERT INTO `think_visitor` VALUES ('18', '1500480000', '1');
+INSERT INTO `think_visitor` VALUES ('19', '1500825600', '29');
+INSERT INTO `think_visitor` VALUES ('20', '1501430400', '13');
