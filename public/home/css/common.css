@@ -1,299 +1,405 @@
-@charset "utf-8";
-
-/* 初始化CSS */
-
-body,
-p,
-ul,
-ol,
-li,
-form,
-img,
-h1,
-h2,
-h3,
-select,
-input {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    color: #333333;
-    text-align: left;
-    font: 14px/25px "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", HELVETICA;
-}
-
-ul,
-li {
-    list-style: none;
-}
-
-img {
-    border: 0;
-}
-
-input {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-input::-moz-focus-inner {
-    border: none;
-    padding: 0;
-}
-
-select,
-input {
-    vertical-align: middle;
-}
-
-select,
-input,
-textarea {
-    font-size: 14px;
-    font-family: "Microsoft YaHei", "微软雅黑";
-    margin: 0;
-}
-
-input[type="text"],
-input[type="password"],
-textarea {
-    outline-style: none;
-    -webkit-appearance: none;
-}
-
-textarea {
-    resize: none;
-}
-
-p {
-    text-indent: 0;
-}
-
-a,
-a:link,
-a:visited {
-    color: #333333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #bb3543;
-    text-decoration: underline;
-}
-
-.fr {
-    float: right;
-}
-
-.fl {
-    float: left;
-}
-
-.clear,
-.clearfix {
-    clear: both;
-}
-
-.overhidden {
-    overflow: hidden;
-}
-
-.dn {
-    display: none;
-}
-
-.pd0 {
-    padding: 0;
-}
-
-.pd10 {
-    padding: 10px;
-}
-
-.pd20 {
-    padding: 20px;
-}
-
-.pl20 {
-    padding-left: 20px;
-}
-
-.pr20 {
-    padding-right: 20px;
-}
-
-.pt20 {
-    padding-top: 20px;
-}
-
-.pb20 {
-    padding-bottom: 20px;
-}
-
-.m20 {
-    margin: 20px;
-}
-
-.mt20 {
-    margin-top: 20px;
-}
-
-.mb20 {
-    margin-bottom: 20px;
-}
-
-.ml20 {
-    margin-left: 20px;
-}
-
-.mr20 {
-    margin-right: 20px;
-}
-
-.p10 {
-    padding: 10px;
-}
-
-.p20 {
-    padding: 20px;
-}
-
-.pl10 {
-    padding-left: 10px;
-}
-
-.pr10 {
-    padding-right: 10px;
-}
-
-.pt10 {
-    padding-top: 10px;
-}
-
-.pb10 {
-    padding-bottom: 10px;
-}
-
-.mg0 {
-    margin: 0;
-}
-
-.m10 {
-    margin: 10px;
-}
-
-.mt10 {
-    margin-top: 10px;
-}
-
-.mb10 {
-    margin-bottom: 10px;
-}
-
-.ml10 {
-    margin-left: 10px;
-}
-
-.mr10 {
-    margin-right: 10px;
-}
-
-.border {
-    border: 1px solid #ccc;
-}
-
-.border-top {
-    border-top: 1px solid #E6E6E6;
-}
-
-.border-right {
-    border-right: 1px solid #ccc;
-}
-
-.blue {
-    color: #2E74BA;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.center {
-    text-align: center;
-}
-
-
-/* 小屏幕（平板，大于等于 768px） */
-
-@media only screen and (max-width: 767px) {
-    .headerTop {}
-}
-
-@media only screen and (min-width: 767px) {
-    .navbar-brand {
+    @charset "utf-8";
+    /* 初始化CSS */
+    
+    body,
+    p,
+    ul,
+    ol,
+    li,
+    form,
+    img,
+    h1,
+    h2,
+    h3,
+    select,
+    input {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        color: #333333;
+        text-align: left;
+        font: 14px/25px "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", HELVETICA;
+    }
+    
+    ul,
+    li {
+        list-style: none;
+    }
+    
+    img {
+        border: 0;
+    }
+    
+    input {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    input::-moz-focus-inner {
+        border: none;
+        padding: 0;
+    }
+    
+    select,
+    input {
+        vertical-align: middle;
+    }
+    
+    select,
+    input,
+    textarea {
+        font-size: 14px;
+        font-family: "Microsoft YaHei", "微软雅黑";
+        margin: 0;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        outline-style: none;
+        -webkit-appearance: none;
+    }
+    
+    textarea {
+        resize: none;
+    }
+    
+    p {
+        text-indent: 0;
+    }
+    
+    a,
+    a:link,
+    a:visited {
+        color: #333333;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: #bb3543;
+        text-decoration: underline;
+    }
+    
+    .fr {
+        float: right;
+    }
+    
+    .fl {
+        float: left;
+    }
+    
+    .clear,
+    .clearfix {
+        clear: both;
+    }
+    
+    .overhidden {
+        overflow: hidden;
+    }
+    
+    .dn {
         display: none;
     }
-}
-
-
-/* 中等屏幕（桌面显示器，大于等于 992px） */
-
-@media screen and (max-width: 992px) {}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {}
-
-
-/* 大屏幕（大桌面显示器，大于等于 1200px） */
-
-@media screen and (min-width:1200px) {}
-
-.headerTop {
-    margin: 0 auto;
-    padding: 0 0 0 0;
-    text-align: center;
-    text-align: center;
-    background: #eee;
-    height: 160px;
-    position: relative;
-}
-
-.headerTop #logoTitle {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-}
-
-.headerTop #logoTitle h3 {
-    margin: 0 auto;
-}
-
-footer {
-    margin: 0;
-    padding: 50px;
-    background: #eee;
-}
-
-#back-to-top {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    background: rgba(244, 100, 95, 0.6);
-    color: #ffffff;
-    text-align: center;
-    border-radius: 2px;
-    z-index: 1;
-    display: none;
-}
-
-#back-to-top:hover {
-    background: #f4645f;
-}
-
-#back-to-top span {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-}
+    
+    .pd0 {
+        padding: 0;
+    }
+    
+    .pd10 {
+        padding: 10px;
+    }
+    
+    .pd20 {
+        padding: 20px;
+    }
+    
+    .pl20 {
+        padding-left: 20px;
+    }
+    
+    .pr20 {
+        padding-right: 20px;
+    }
+    
+    .pt20 {
+        padding-top: 20px;
+    }
+    
+    .pb20 {
+        padding-bottom: 20px;
+    }
+    
+    .m20 {
+        margin: 20px;
+    }
+    
+    .mt20 {
+        margin-top: 20px;
+    }
+    
+    .mb20 {
+        margin-bottom: 20px;
+    }
+    
+    .ml20 {
+        margin-left: 20px;
+    }
+    
+    .mr20 {
+        margin-right: 20px;
+    }
+    
+    .p10 {
+        padding: 10px;
+    }
+    
+    .p20 {
+        padding: 20px;
+    }
+    
+    .pl10 {
+        padding-left: 10px;
+    }
+    
+    .pr10 {
+        padding-right: 10px;
+    }
+    
+    .pt10 {
+        padding-top: 10px;
+    }
+    
+    .pb10 {
+        padding-bottom: 10px;
+    }
+    
+    .mg0 {
+        margin: 0;
+    }
+    
+    .m10 {
+        margin: 10px;
+    }
+    
+    .mt10 {
+        margin-top: 10px;
+    }
+    
+    .mb10 {
+        margin-bottom: 10px;
+    }
+    
+    .ml10 {
+        margin-left: 10px;
+    }
+    
+    .mr10 {
+        margin-right: 10px;
+    }
+    
+    .border {
+        border: 1px solid #ccc;
+    }
+    
+    .border-top {
+        border-top: 1px solid #E6E6E6;
+    }
+    
+    .border-right {
+        border-right: 1px solid #ccc;
+    }
+    
+    .blue {
+        color: #2E74BA;
+    }
+    
+    .bold {
+        font-weight: bold;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    /* 小屏幕（平板，大于等于 768px） */
+    
+    @media only screen and (max-width: 767px) {
+        .headerTop {}
+    }
+    
+    @media only screen and (min-width: 767px) {
+        .navbar-brand {
+            display: none;
+        }
+    }
+    /* 中等屏幕（桌面显示器，大于等于 992px） */
+    
+    @media screen and (max-width: 992px) {}
+    
+    @media screen and (min-width: 768px) and (max-width: 992px) {}
+    /* 大屏幕（大桌面显示器，大于等于 1200px） */
+    
+    @media screen and (min-width:1200px) {}
+    
+    .headerTop {
+        margin: 0 auto;
+        padding: 0 0 0 0;
+        text-align: center;
+        text-align: center;
+        background: #eee;
+        height: 160px;
+        position: relative;
+    }
+    
+    .headerTop #logoTitle {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+    }
+    
+    .headerTop #logoTitle h3 {
+        margin: 0 auto;
+    }
+    
+    footer {
+        margin: 0;
+        padding: 50px;
+        background: #eee;
+    }
+    
+    #back-to-top {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background: rgba(244, 100, 95, 0.6);
+        color: #ffffff;
+        text-align: center;
+        border-radius: 2px;
+        z-index: 1;
+        display: none;
+    }
+    
+    #back-to-top:hover {
+        background: #f4645f;
+    }
+    
+    #back-to-top span {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    /*index*/
+    
+    .post {
+        padding: 20px 1% 2px 1%;
+        text-align: left;
+        clear: both;
+        word-break: break-all;
+        overflow: hidden;
+    }
+    
+    .post .post-date {
+        height: 1em;
+        line-height: 1em;
+        margin: 0;
+        font-size: 0.9em;
+        font-weight: normal;
+        text-align: right;
+        width: 30%;
+        float: right;
+        color: #666;
+        padding-top: 10px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+    
+    .post .post-title {
+        margin: 0;
+        font-size: 1.4em;
+        line-height: 1.4em;
+        color: #000000;
+        text-align: left;
+        width: 70%;
+        float: left;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 5px;
+        padding-left: 0;
+    }
+    
+    .post div.post-body {
+        width: 100%;
+        margin: 0 0 15px 0;
+        padding: 10px 0 0 0;
+        font-size: 1em;
+        text-align: justify;
+        line-height: 180%;
+        clear: both;
+        border-top: 1px solid #dbe0e6;
+        word-break: break-all;
+    }
+    
+    .post .post-tags {
+        width: 100%;
+        margin: 0 0 0 0;
+        padding: 2px 0 0 0;
+        font-size: 1em;
+        font-weight: normal;
+        color: gray;
+        height: 20px;
+        text-align: left;
+        text-indent: 0em;
+        float: left;
+    }
+    
+    .post .post-footer {
+        width: 100%;
+        font-size: 0.9em;
+        font-weight: normal;
+        color: #aaa;
+        text-align: right;
+        margin-top: 10px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 0;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 5px;
+        padding-left: 0;
+        float: left;
+    }
+    /*rank*/
+    
+    .rank .ranktitle {
+        font-size: 1em;
+        height: 40px;
+        line-height: 30px;
+        color: #333333;
+        background-color: #f2f2f2;
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 1em;
+    }
+    
+    .rank .rankbody ul {
+        text-align: left;
+        width: 95%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5%;
+        border-top: 1px solid #FFFFFF;
+        list-style-position: outside;
+        list-style-type: none;
+    }
+    
+    .rank .rankbody ul li {
+        margin: 0 0 0 0;
+        padding: 3px 0 3px 0em;
+        white-space: nowrap;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }

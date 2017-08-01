@@ -33,7 +33,7 @@ class HomeBase extends Controller
                 $site_config[$v['name']] = $v['value'];
             }
             Cache::set('site_config', $site_config);
-        }        
+        }       
         $this->assign('C',$site_config);
     }
 

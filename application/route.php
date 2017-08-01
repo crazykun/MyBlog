@@ -9,6 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+use think\Route;
+
+Route::rule('article/[:aid]','index/index/article');
 return [
     '__pattern__' => [
         'name' => '\w+',

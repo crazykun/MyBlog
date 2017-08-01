@@ -6,17 +6,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="/">首页</a></li>
+                <li class="active">{$article.title}</li>
+            </ol>
             <div class="news-list">
-                {volist name="lists" id="vo" key="k" }
                 <div class="post">
-                    <h2 class="post-title fl"><a href="/article/{$vo.id}.html">{$vo.title}</a></h2>
-                    <h4 class="post-date fr">{$vo.publish_time | friendly_date = ###,'mohu'}</h4>
+                    <h2 class="post-title fl"><a href="/article/{$article.id}.html">{$article.title}</a></h2>
+                    <h4 class="post-date fr">{$article.publish_time}</h4>
                     <div class="post-body clear">
-                        {$vo.introduction}... {if condition="$vo.thumb"}
-                        <a target="_blank" class="pic" href="/article/{$vo.id}.html">
-                            <img width="165" height="110" src="{$vo.thumb}" alt="{$vo.title}">
-                        </a>
-                        {/if}
+                        {$article.content}
                     </div>
                     <h5 class="post-tags">
                         Tags:
@@ -29,12 +28,9 @@
                     </h5>
                     <h6 class="post-footer">
                         发布:圈圈 | 分类:如是观 | 评论:<span>24</span>24 | 浏览:<span>1393</span>
-                        <a href="/news/{$vo.id}.html">阅读全文 &gt; </a>
                     </h6>
                 </div>
-                {/volist}
             </div>
-            {$lists->render()}
         </div>
         <div class="col-md-3">
             <div class="rank">
