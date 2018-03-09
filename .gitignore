@@ -4,3 +4,4 @@ composer.lock
 runtime/
 .vscode
 /public/uploads/*
+.user.ini
